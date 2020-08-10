@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 });
+Route::get('qr-code-g', function () {
+
+
+    return view('qrCode');
+});
+https://www.w3adda.com/blog/laravel-simple-qr-code-generator-example
