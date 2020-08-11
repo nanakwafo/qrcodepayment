@@ -9,8 +9,6 @@
 
 
     {!! QrCode::size(250)->generate('nana'); !!}
-git
-
 </div>
 
 </body>
