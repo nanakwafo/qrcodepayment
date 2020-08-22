@@ -1,0 +1,52 @@
+version: '3'
+
+networks:
+  qrcodepaymentmicroservice:
+
+
+services:
+  nginx:
+    image: nginx:stable-alpine
+    container_name: qrcodePayment-nginx
+    ports:
+      - "8083:80"
+    volumes:
+      - ../src:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - qrcodepaymentmicroservice
+
+
+  mysql:
+    image: mysql:5.7.22
+    container_name: qrcodePayment-mysql
+    restart: always
+    tty: true
+    ports:
+      - "4303:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: qrcodepaymentdb
+      MYSQL_USER: kwafodev
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    networks:
+      - qrcodepaymentmicroservice
+  
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qrcodePayment-php
+    volumes:
+      - ../src:/var/www/html
+    ports:
+      - "9004:9000"
+    networks:
+      - qrcodepaymentmicroservice
