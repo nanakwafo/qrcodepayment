@@ -17,9 +17,9 @@ Route::get('/', function () {
 
     return view('welcome');
 });
-Route::get('qr-code-g', function () {
+Route::get('qr-code-g/{code}', function ($code) {
 
 
-    return view('qrCode');
+    return view('qrCode',['code'=>$code]);
 });
 https://www.w3adda.com/blog/laravel-simple-qr-code-generator-example
