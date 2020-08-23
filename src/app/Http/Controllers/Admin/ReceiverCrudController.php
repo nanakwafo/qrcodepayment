@@ -29,7 +29,7 @@ class ReceiverCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Receiver::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/receiver');
-        CRUD::setEntityNameStrings('receiver', 'receivers');
+        CRUD::setEntityNameStrings('receiver', 'Vendor');
     }
 
     /**
