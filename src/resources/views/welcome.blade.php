@@ -192,7 +192,7 @@
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group checkbox">
-                            <input type="checkbox" id="rterms" value="Agreed-to-Terms" name="rterms" required>I agree with Evolo's stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms & Conditions</a>
+                            <input type="checkbox" id="rterms" value="Agreed-to-Terms" name="rterms" required>I agree with Ollie Qr Payment stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms & Conditions</a>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
